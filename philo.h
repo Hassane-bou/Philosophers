@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 08:37:11 by haboucha          #+#    #+#             */
-/*   Updated: 2025/05/17 10:52:52 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:18:04 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_philo
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
 	pthread_mutex_t	meal_lock;
-	int				finished;
 	struct s_data	*data;
 }					t_philo;
 
