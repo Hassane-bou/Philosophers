@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 08:37:19 by haboucha          #+#    #+#             */
-/*   Updated: 2025/05/17 10:53:48 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:53:25 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ int	check_arguments(int argc, char **argv)
 			return (1);
 		}
 		else if (ft_atoi(argv[1]) > 200)
-		{
-			printf("You can't use more than 200 philo!!\n");
-			return (1);
-		}
+			return (printf("You can't use more than 200 philo!!\n"), 1);
 	}
-	if (argc == 6 && (check_parse(argv[5]) != 0 || ft_atoi(argv[1]) <= 0))
+	if (argc == 6 && (check_parse(argv[5]) != 0 || ft_atoi(argv[5]) == 0
+			|| ft_atoi(argv[1]) <= 0))
 	{
 		printf("fixe this last argument\n");
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 08:37:14 by haboucha          #+#    #+#             */
-/*   Updated: 2025/05/17 10:50:29 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:48:14 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	check_parse(char *str)
 	int	i;
 
 	i = 0;
+	if (str[i] == '-')
+		return (1);
+	if (str[i] == '+')
+		i++;
 	while (str[i])
 	{
 		if (isdigit(str[i]) != 0)
@@ -66,7 +70,7 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			s = -1;
+			s *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
