@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 08:37:08 by haboucha          #+#    #+#             */
-/*   Updated: 2025/05/20 17:32:06 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/05/21 09:21:58 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	check_is_one_philo(t_philo *philo)
 		print_mutex(philo, 'f');
 		pthread_mutex_unlock(philo->left_fork);
 		ft_usleep(philo->data, philo->data->time_to_die);
-		print_dead(philo->data, 1);
+		pthread_mutex_lock(&philo->data->print_mutex);
+		printf("%zu %d died\n", gettime() - philo->data->start_time, 1);
+		pthread_mutex_unlock(&philo->data->print_mutex);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:48:07 by haboucha          #+#    #+#             */
-/*   Updated: 2025/05/20 17:38:18 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/05/21 09:21:31 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_usleep(t_data *data, size_t ms)
 			return ;
 		}
 		pthread_mutex_unlock(&data->dead_lock);
-		if ((gettime() - time) > ms)
+		if ((gettime() - time) >= ms)
 			break ;
 		usleep(100);
 	}
