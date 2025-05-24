@@ -12,8 +12,8 @@ all: $(NAME)
 $(NAME):$(OBJE)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
-%.o:%.c
-	$(CC) $(CFLAGC) -c $< -o $@
+%.o:%.c philo.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJE)
